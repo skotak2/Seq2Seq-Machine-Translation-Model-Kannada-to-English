@@ -1,0 +1,9 @@
+# Function dependencies, for example:
+# package>=version
+google-cloud-storage
+Flask
+gunicorn
+numpy
+matplotlib
+torch
+
