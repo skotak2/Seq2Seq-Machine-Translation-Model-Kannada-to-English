@@ -40,7 +40,7 @@ Build a Flask application which can be access from local machine at the address 
 
 # Deployment
 
-* We will use the [Script](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Code/Kannada_to_English_Machine_Translation.ipynb) to train the model. After training the model, we will save the model weights in a .pt file and store in google cloud storage. We also build the vocabulary dictionary by indexing each word to a number and pickle them. These pickle files are also stored in storage file. You can access them [here] (https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/tree/main/Storage%20Files) Once these files are in place, the deployment can be done following the steps below
+* We will use the [Script](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Code/Kannada_to_English_Machine_Translation.ipynb) to train the model. After training the model, we will save the model weights in a .pt file and store in google cloud storage. We also build the vocabulary dictionary by indexing each word to a number and pickle them. These pickle files are also stored in storage file. You can access them [here](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/tree/main/Storage%20Files) Once these files are in place, the deployment can be done following the steps below
 
 
 * We will upload the files on a storage bucket. To Create a bucket using following options as highlighted with following specifications
