@@ -45,7 +45,7 @@ Build a Flask application which can be access from local machine at the address 
 
 * We will upload the files on a storage bucket. To Create a bucket using following options as highlighted with following specifications
 
-![GitHub Logo](/Images/Picture 1.png)
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture1.png)
 
 * Go to products, search for EC2
 
