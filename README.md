@@ -36,17 +36,17 @@ The data for this project is available as text file on [Data Source](https://www
 First we build the encoder decoder model, with attention mechanism using GRU RNN. The training was done using Python script available [Here](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Code/Kannada_to_English_Machine_Translation.ipynb)
 
 # App development
-Build a Flask application which can be access from local machine at the address http://127.0.0.1:5000/predict. To check if the application is working or not, we put "/" method where we are printing "Hello World!" in the address http://127.0.0.1:5000/.
+Build a Flask application which can be access from local machine at the address http://127.0.0.1:5000/predict. 
 
-![GitHub Logo](/images/Predictmethod.PNG)
+# Deployment
 
-The code file to build the Flask application is available here: https://github.com/VipanchiKatthula/English-to-Telugu-Translator/blob/master/code/main_program.py
-![GitHub Logo](/images/Access.PNG)
+* We will use the [Script](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Code/Kannada_to_English_Machine_Translation.ipynb) to train the model. After training the model, we will save the model weights in a .pt file and store in google cloud storage. We also build the vocabulary dictionary by indexing each word to a number and pickle them. These pickle files are also stored in storage file. You can access them [here] (https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Storage Files). Once these files are in place, the deployment can be done following the steps below
 
-Once the Flask application is up and running in the local PC. You can prepare to deploy it on AWS using Linux t2.micro server. We need to have the model weights, indexer pkl files as in this case, the end-users will provide text input which needs to be indexed before it is passed to the Keras model. The indexer pkl file could not be shared on github as it was occupying a space of 120 Mb. 
 
-# AWS setup
-* Create an AWS account if you don't already have one and you would have access to 650 hours of FREE access to Amazon's basic EC2 servers which are basically Virtual machines hosted on Amazon.
+* We will upload the files on a storage bucket. To Create a bucket using following options as highlighted with following specifications
+
+![GitHub Logo](/Images/Picture 1.png)
+
 * Go to products, search for EC2
 
 ![GitHub Logo](/images/AWS1.png)
