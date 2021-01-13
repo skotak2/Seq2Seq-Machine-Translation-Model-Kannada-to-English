@@ -47,39 +47,44 @@ Build a Flask application which can be access from local machine at the address 
 
 ![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture1.png)
 
-* Go to products, search for EC2
+* Use the highlighted options to upload the .pt and .pkl files and to configure permissions. Here we set the files to public access, however you could set it to your requirements.
 
-![GitHub Logo](/images/AWS1.png)
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture2.png)
 
-* Click on "Launch EC2 Instance"
+* Now we use the cloud functions capability to deploy the code the code for the Flask API and access the weights and vocabulary dictionary from the storage. 
 
-![GitHub Logo](/images/AWS2Launch.png)
+For creating the cloud function, browse for it on the GCP platform and use the options highlighted to below to create a function,
 
-* Choose **Amazon Linux 2 AMI (HVM)**
 
-![GitHub Logo](/images/AWS3AMI.png)
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture3.png)
 
-* Select the **t2.micro** instance in the shows AMIs
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture4.png)
 
-![GitHub Logo](/images/AWS4t2micro.png)
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture5.png)
 
-* Click on Review and Launch the server. 
-![GitHub Logo](/images/AWS5ReviewLaunch.png)
+*Allocation of 1 GiB memory is recommended. Once set, click on ‘Next’ and deploy the code on the cloud function console. 
 
-* Add a new HTTP permission for the VM to be access from external traffic. You would be asked a Key-value pair which is like the password to access the Virtual Machine. Select the option to generate a new Key-value pair and keep it safe as you need it to access the VM from PC.
+To deploy the code, first configure the console with the below highlighted settings and prepare the environment using the requirements file (this is equivalent to pip install {library}) as described below, 
 
-![GitHub Logo](/images/AWS6HTTP.png)
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture6.png)
 
-# Docker
-The requirements.txt file is present [here](https://github.com/VipanchiKatthula/English-to-Telugu-Translator/blob/master/requirements.txt) which gives the list of requirements for the docker to be installed in the VM to host our Flask application.
+* Once Requirement is set with the above libraries, prepare the main.py script for deployment. The script has the api_request(x) function defined for returning the desired output given the input – ‘x’, from an external source. The code is uploaded above with name “main.py”. Once the code is arranged click on deploy.
 
-Run the following commands in cmd prompt to connect to the VM:[docker_commands](https://github.com/VipanchiKatthula/English-to-Telugu-Translator/blob/master/docker_commands.txt) where the public-dns-name is in the format ec2–x–x–x–x.compute-1.amazonaws.com. 
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture7.png)
 
-You will be able to access the deployed model in the url: http://public-dns-name/predict
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture8.png)
+
+* Once deployment is complete, click on the cloud function, using TESTING option to debug for deployment errors. Once the input is passed in the below format, test the function, and look for the desired output.
+
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture9.png)
+
+![GitHub Logo](https://github.com/skotak2/Seq2Seq-Machine-Translation-Model-Kannada-to-English/blob/main/Images/Picture10.png)
+
+
 ## RESULTS
 The deployed model can be accessed from any python development tool like Jupyter Notebook or Spyder. As the data used for the model development was much smaller than the training data for Google translate, we were not able to achieve that level of accuracy. However, the deployed model can be improved upon and made perfect by adding advanced techniques like attention. 
 
 ## REFERENCES
-* https://towardsdatascience.com/deploy-ml-models-at-scale-151204549f41
-* https://towardsdatascience.com/simple-way-to-deploy-machine-learning-models-to-cloud-fd58b771fdcf
+* https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html
+* https://pytorch.org/tutorials/beginner/saving_loading_models.html
 
