@@ -1,7 +1,7 @@
 # Seq2Seq-Machine-Translation-Model-Kannada-to-English
 Develop REST API to perform machine translation using Seq2Seq  model. The model deployment is done using google could platform. 
 
-# English-to-Telugu-Translator
+# Kannada-to-English-Translator
 
 ### TABLE OF CONTENTS
 * [Objective](#objective)
@@ -12,12 +12,12 @@ Develop REST API to perform machine translation using Seq2Seq  model. The model 
 * [Results](#results)
 
 ## OBJECTIVE 
-1. Built a REST API to convert English sentences to Telugu using LSTM and Keras. 
-2. Deploy the built model onto AWS while using Docker-container orchestration.
+1. Built a REST API to convert Kannada sentences to English using GRU and pyTorch. 
+2. Deploy the model on Google cloud platform
 
 ## TECHNOLOGIES
 Project is created with: 
-* Python - **pandas, keras, numpy, seaborn, sklearn, pickle**
+* Python - **pandas, pyTorch, numpy, seaborn, sklearn, pickle**
 * Google Cloud Platform - **cloud functions**
 * Flask
 
@@ -82,7 +82,7 @@ To deploy the code, first configure the console with the below highlighted setti
 
 
 ## RESULTS
-The deployed model can be accessed from any python development tool like Jupyter Notebook or Spyder. As the data used for the model development was much smaller than the training data for Google translate, we were not able to achieve that level of accuracy. However, the deployed model can be improved upon and made perfect by adding advanced techniques like attention. 
+The deployed model can be accessed from the url from any system to translate kannada sentences to english. 
 
 ## REFERENCES
 * https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html
